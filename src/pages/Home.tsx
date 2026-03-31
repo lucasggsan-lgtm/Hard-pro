@@ -24,26 +24,34 @@ export function Home() {
         
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4">
           <div className="max-w-2xl">
-            <span className="mb-4 inline-block rounded-full bg-blue-600/20 px-3 py-1 text-sm font-semibold text-blue-400">
-              Soluções B2B e B2C
+            <span className="mb-4 inline-block rounded-full bg-red-500/20 px-3 py-1 text-sm font-semibold text-red-400 border border-red-500/30">
+              🚨 Estoque para Pronta Entrega
             </span>
-            <h1 className="mb-6 text-5xl font-extrabold tracking-tight md:text-6xl lg:text-7xl">
-              Peças e Ferramentas de <span className="text-blue-500">Alta Performance</span>
+            <h1 className="mb-6 text-5xl font-extrabold tracking-tight md:text-6xl lg:text-7xl leading-tight">
+              Máquina parada custa caro. <br/><span className="text-blue-500">Retome sua produção hoje.</span>
             </h1>
             <p className="mb-8 text-lg text-slate-300 md:text-xl">
-              Equipamentos duráveis, preços competitivos e entrega rápida para sua indústria, oficina ou projeto. Solicite orçamentos em volume com descontos exclusivos.
+              Não perca prazos por falta de suprimentos. Peças industriais e ferramentas de alta durabilidade com <strong>despacho em até 24h</strong>.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link to="/loja">
-                <Button size="lg" variant="primary" className="w-full sm:w-auto text-lg px-8">
-                  Comprar Agora
+                <Button size="lg" variant="primary" className="w-full sm:w-auto text-lg px-8 shadow-lg shadow-blue-600/30 hover:scale-105 transition-transform">
+                  Ver Produtos a Pronta Entrega
                 </Button>
               </Link>
               <Link to="/orcamento">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8 border-slate-400 text-white hover:bg-white hover:text-slate-900">
-                  Solicitar Orçamento
+                <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8 border-slate-400 text-white hover:bg-white hover:text-slate-900 transition-transform hover:scale-105">
+                  Receber Cotação em 2h
                 </Button>
               </Link>
+            </div>
+            <div className="mt-6 flex items-center gap-4 text-sm text-slate-400">
+              <div className="flex -space-x-2">
+                <img className="w-8 h-8 rounded-full border-2 border-slate-900" src="https://i.pravatar.cc/100?img=11" alt="User" />
+                <img className="w-8 h-8 rounded-full border-2 border-slate-900" src="https://i.pravatar.cc/100?img=12" alt="User" />
+                <img className="w-8 h-8 rounded-full border-2 border-slate-900" src="https://i.pravatar.cc/100?img=13" alt="User" />
+              </div>
+              <span>Mais de <strong>10.000 empresas</strong> já confiam na HardPro.</span>
             </div>
           </div>
         </div>
@@ -236,21 +244,22 @@ export function Home() {
       </section>
 
       {/* 8. BANNER DE CTA */}
-      <section className="bg-blue-600 py-16 text-white">
-        <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Precisa comprar em grande quantidade?</h2>
+      <section className="bg-blue-600 py-16 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+        <div className="mx-auto max-w-4xl px-4 text-center relative z-10">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Cansado de esperar dias por um orçamento?</h2>
           <p className="mb-8 text-lg text-blue-100">
-            Temos condições exclusivas, descontos progressivos e faturamento para empresas. Fale com um de nossos especialistas agora mesmo.
+            Na HardPro, empresas com CNPJ recebem cotações com <strong>descontos progressivos em até 2 horas úteis</strong>. Pare de perder tempo e dinheiro.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link to="/orcamento">
-              <Button size="lg" className="w-full bg-white text-blue-600 hover:bg-slate-100 sm:w-auto">
-                Solicitar Orçamento Personalizado
+              <Button size="lg" className="w-full bg-white text-blue-600 hover:bg-slate-100 sm:w-auto shadow-xl hover:scale-105 transition-transform">
+                Garantir Minhas Condições B2B
               </Button>
             </Link>
             <Link to="/contato">
-              <Button size="lg" variant="outline" className="w-full border-blue-400 text-white hover:bg-blue-700 sm:w-auto">
-                Falar com Consultor
+              <Button size="lg" variant="outline" className="w-full border-blue-400 text-white hover:bg-blue-700 sm:w-auto hover:scale-105 transition-transform">
+                Falar com Consultor Agora
               </Button>
             </Link>
           </div>

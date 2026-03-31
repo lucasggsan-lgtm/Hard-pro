@@ -22,7 +22,10 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white shadow-sm">
-      {/* Top bar */}
+      {/* Top bar - Urgency & Benefit */}
+      <div className="bg-blue-600 px-4 py-1.5 text-center text-xs font-medium text-white sm:text-sm">
+        🔥 Frete Grátis para todo o Brasil nas compras acima de R$ 500. <span className="underline cursor-pointer">Aproveite!</span>
+      </div>
       <div className="hidden bg-slate-900 px-4 py-1 text-xs text-slate-300 md:block">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           <span>Especialistas em peças industriais e hardware B2B/B2C</span>

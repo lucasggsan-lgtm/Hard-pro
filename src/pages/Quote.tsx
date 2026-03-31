@@ -117,10 +117,14 @@ export function Quote() {
                   </ul>
                 </div>
 
-                <Button type="submit" size="lg" variant="primary" className="w-full text-lg">
-                  Enviar Solicitação de Orçamento
+                <Button type="submit" size="lg" variant="primary" className="w-full text-lg shadow-lg shadow-blue-600/20 hover:scale-[1.02] transition-transform">
+                  Receber Cotação em 2 Horas
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
+                <p className="mt-3 text-center text-xs text-slate-500 flex items-center justify-center gap-1">
+                  <ShieldCheck className="h-4 w-4 text-green-500" />
+                  Seus dados estão seguros e não enviamos spam.
+                </p>
               </form>
             </div>
           </div>

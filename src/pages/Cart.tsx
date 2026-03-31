@@ -107,6 +107,21 @@ export function Cart() {
           <div className="sticky top-24 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="mb-6 text-xl font-bold text-slate-900">Resumo do Pedido</h2>
             
+            {/* Free Shipping Progress */}
+            <div className="mb-6 rounded-lg border border-blue-100 bg-blue-50 p-4">
+              <p className="mb-2 text-sm font-medium text-blue-900">
+                {totalPrice >= 500 
+                  ? "🎉 Você ganhou Frete Grátis!" 
+                  : `Faltam ${formatCurrency(500 - totalPrice)} para Frete Grátis`}
+              </p>
+              <div className="h-2 w-full overflow-hidden rounded-full bg-blue-200">
+                <div 
+                  className="h-full bg-blue-600 transition-all duration-500" 
+                  style={{ width: `${Math.min((totalPrice / 500) * 100, 100)}%` }}
+                ></div>
+              </div>
+            </div>
+
             <div className="mb-4 space-y-3 text-sm text-slate-600">
               <div className="flex justify-between">
                 <span>Subtotal ({totalItems} itens)</span>
@@ -114,11 +129,9 @@ export function Cart() {
               </div>
               <div className="flex justify-between">
                 <span>Frete</span>
-                <span className="text-green-600">A calcular</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Descontos</span>
-                <span className="text-green-600">- {formatCurrency(0)}</span>
+                <span className={totalPrice >= 500 ? "font-bold text-green-600" : "text-slate-900"}>
+                  {totalPrice >= 500 ? "Grátis" : "A calcular"}
+                </span>
               </div>
             </div>
 
@@ -127,18 +140,18 @@ export function Cart() {
                 <span className="font-bold text-slate-900">Total</span>
                 <span className="text-2xl font-extrabold text-slate-900">{formatCurrency(totalPrice)}</span>
               </div>
-              <p className="mt-1 text-right text-xs text-slate-500">Em até 10x sem juros no cartão</p>
+              <p className="mt-1 text-right text-xs text-green-600 font-medium">Em até 10x sem juros no cartão</p>
             </div>
 
-            <Button size="lg" variant="primary" className="mb-4 w-full text-lg">
-              Finalizar Compra
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" variant="primary" className="mb-4 w-full text-lg shadow-lg shadow-blue-600/20 hover:scale-[1.02] transition-transform">
+              <ShieldCheck className="mr-2 h-5 w-5" />
+              Finalizar Compra Segura
             </Button>
 
-            <div className="rounded-lg bg-slate-50 p-4 text-center text-sm text-slate-600 border border-slate-200">
-              <ShieldCheck className="mx-auto mb-2 h-6 w-6 text-green-500" />
-              <p className="font-medium text-slate-900">Compra 100% Segura</p>
-              <p className="text-xs">Seus dados estão protegidos.</p>
+            <div className="flex items-center justify-center gap-4 text-slate-400">
+              <img src="https://logospng.org/download/pix/logo-pix-icone-1024.png" alt="Pix" className="h-6 opacity-60 grayscale" />
+              <img src="https://logospng.org/download/mastercard/logo-mastercard-2048.png" alt="Mastercard" className="h-6 opacity-60 grayscale" />
+              <img src="https://logospng.org/download/visa/logo-visa-2048.png" alt="Visa" className="h-6 opacity-60 grayscale" />
             </div>
           </div>
         </div>

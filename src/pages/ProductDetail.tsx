@@ -96,11 +96,21 @@ export function ProductDetail() {
           </div>
 
           <div className="mb-8 rounded-lg bg-slate-50 p-4 border border-slate-200">
-            <div className="mb-4 flex items-center gap-2 text-green-600 font-medium">
-              <CheckCircle className="h-5 w-5" />
-              Em estoque ({product.stock} unidades)
+            <div className="mb-3 flex items-center gap-2 text-red-600 font-bold">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+              </span>
+              Alta Demanda: Apenas {product.stock} unidades restantes!
             </div>
-            <div className="flex items-center gap-4">
+            <div className="mb-4 h-2 w-full overflow-hidden rounded-full bg-slate-200">
+              <div className="h-full bg-red-500" style={{ width: `${Math.max(10, (product.stock / 500) * 100)}%` }}></div>
+            </div>
+            <div className="mb-4 flex items-center gap-2 text-sm text-slate-600">
+              <Truck className="h-4 w-4 text-green-600" />
+              <span>Compre nas próximas <strong>2h 15m</strong> para envio ainda hoje.</span>
+            </div>
+            <div className="flex items-center gap-4 border-t border-slate-200 pt-4">
               <span className="text-sm font-medium text-slate-700">Quantidade:</span>
               <div className="flex items-center rounded-md border border-slate-300 bg-white">
                 <button onClick={() => handleQuantityChange('dec')} className="px-3 py-2 text-slate-500 hover:text-slate-900 disabled:opacity-50" disabled={quantity <= 1}>
@@ -118,20 +128,20 @@ export function ProductDetail() {
             <Button 
               size="lg" 
               variant="primary" 
-              className="flex-1 text-lg"
+              className="flex-1 text-lg shadow-lg shadow-blue-600/20 hover:scale-[1.02] transition-transform"
               onClick={() => addToCart(product, quantity)}
             >
               <ShoppingCart className="mr-2 h-5 w-5" />
-              Adicionar ao Carrinho
+              Comprar Agora
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="flex-1 text-lg border-blue-600 text-blue-600 hover:bg-blue-50"
+              className="flex-1 text-lg border-blue-600 text-blue-600 hover:bg-blue-50 hover:scale-[1.02] transition-transform"
               onClick={() => addToQuote(product, quantity)}
             >
               <FileText className="mr-2 h-5 w-5" />
-              Solicitar Orçamento
+              Cotar em Volume
             </Button>
           </div>
 
